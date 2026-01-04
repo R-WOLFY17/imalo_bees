@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+     <head> <meta charset="UTF-8"> 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Our Founders - Imalo Bees Limited</title> <style>
+      
+      
+       * { 
+           margin: 0;
+            padding: 0;
+             box-sizing: border-box;
+              } 
+        :root {
+             --primary-yellow: #FDB913; 
+             --dark-brown: #3E2723;
+              --light-brown: #8D6E63; 
+              --green: #7CB342; 
+              --cream: #FFF8E1;
+               --black: #1a1a1a; 
+               --white: #ffffff; }
+        body {
+             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              line-height: 1.6; 
+              color: var(--black); 
+              background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+               overflow-x: hidden;
+                }
+                 /* Navigation */
+        nav {
+             background: linear-gradient(135deg, var(--dark-brown) 0%, var(--light-brown) 100%);
+              padding: 1rem 5%;
+               position: fixed; 
+              width: 100%; top: 0; 
+              z-index: 1000;
+               box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+               }
+        .nav-container { max-width: 1200px;
+         margin: 0 auto;
+          display: flex;
+           justify-content: space-between; 
+           align-items: center;
+            }
+        .logo { font-size: 1.5rem; 
+        font-weight: bold;
+         color: var(--primary-yellow);
+        display: flex;
+         align-items: center;
+          gap: 8px; 
+          text-decoration: none;
+           }
+           .logo {
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: var(--primary-yellow);
+          display: flex;
+          align-items: center;
+          gap: 10px;
+}
+          .logo img{
+            width: 100px;
+            height: auto;
+}
+        .back-link { color: var(--white);
+         text-decoration: none;
+          padding: 0.5rem 1.5rem;
+           border: 2px solid var(--primary-yellow);
+            border-radius: 25px;
+             transition: all 0.3s;
+              font-weight: 500;
+               } 
+        .back-link:hover {
+             background: var(--primary-yellow); 
+             color: var(--dark-brown);
+         
+          }
+      
+          /* Hero Section */
+         .hero {
+              background: linear-gradient(135deg, rgba(251, 185, 19, 0.9) 0%, rgba(125, 179, 66, 0.8) 100%); 
+              padding: 8rem 5% 4rem; 
+              text-align: center;
+               margin-top: 70px;
+                color: var(--white);
+                 } 
+        .hero h1 {
+             font-size: clamp(2.5rem, 5vw, 4rem);
+              margin-bottom: 1rem;
+               text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                }
+        .hero p { 
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+             max-width: 800px; margin: 0 auto;
+              text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+               }
+               
+             /* Main Content */ 
+        .container { 
+            max-width: 1200px;
+             margin: 0 auto;
+              padding: 4rem 5%;
+               } 
+        .section-title {
+             text-align: center; 
+             font-size: clamp(2rem, 4vw, 2.5rem);
+              color: var(--dark-brown); 
+              margin-bottom: 1rem;
+               position: relative; 
+               }
+        .section-subtitle {
+             text-align: center;
+              font-size: clamp(1rem, 2vw, 1.2rem);
+               color: var(--light-brown);
+                margin-bottom: 4rem;
+                 max-width: 700px;
+                  margin-left: auto;
+                   margin-right: auto;
+         }
+                     /* Founders Grid */
+        .founders-grid { 
+            display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+              gap: 3rem;
+               margin-bottom: 4rem;
+                } 
+        .founder-card {
+             background: var(--white); 
+             border-radius: 20px; 
+             overflow: hidden;
+              box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+               transition: transform 0.3s, box-shadow 0.3s;
+                border-top: 5px solid var(--primary-yellow);
+         }
+        .founder-card:hover {
+             transform: translateY(-10px);
+              box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+         } 
+        .founder-image { 
+            width: 100%;
+             height: 350px;
+              background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--green) 100%);
+               display: flex;
+                align-items: center;
+                 justify-content: center;
+                  font-size: 8rem;
+                   position: relative;
+                    overflow: hidden;
+             } 
+        .founder-image::after {
+                  content: '';
+                   position: absolute;
+                    bottom: 0; 
+                    left: 0;
+                     right: 0; 
+                     height: 100px;
+                      background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+                       }
+        .founder-info {
+             padding: 2rem;
+              } 
+        .founder-name {
+             font-size: 1.8rem;
+              color: var(--dark-brown);
+               margin-bottom: 0.5rem;
+                font-weight: bold;
+                 } 
+        .founder-role {              
+        font-size: 1.2rem;
+         color: var(--green);
+          margin-bottom: 1rem;
+           font-weight: 600;
+            } 
+        .founder-bio {
+             color: #555;
+              line-height: 1.8;
+               margin-bottom: 1.5rem;
+               }
+                
+        .founder-highlights {
+             background: var(--cream);
+              padding: 1rem;
+               border-radius: 10px;
+                margin-bottom: 1.5rem;
+                 } 
+        .founder-highlights h4 { 
+            color: var(--dark-brown);
+             margin-bottom: 0.5rem;
+              font-size: 1rem;
+               }
+        .founder-highlights ul {
+             list-style: none;
+              padding-left: 0;
+               }
+        .founder-highlights li {
+             padding: 0.3rem 0;
+              padding-left: 1.5rem;
+               position: relative;
+                color: #555;
+                 font-size: 0.95rem;
+                  }
+        .founder-highlights li::before {
+             position: absolute;
+              left: 0;
+               font-size: 0.9rem;
+                } 
+        .social-links {
+                     display: flex;
+                      gap: 1rem;
+                       justify-content: center;
+                        margin-top: 1.5rem;
+                         padding-top: 1.5rem;
+                          border-top: 2px solid var(--cream);
+                           } 
+        .social-link { width: 45px;
+         height: 45px;
+          border-radius: 50%;
+           display: flex; align-items: center;
+            justify-content: center;
+             text-decoration: none;
+              font-size: 1.3rem;
+               transition: all 0.3s;
+                background: var(--cream);
+                 } 
+        .social-link.linkedin { 
+            color: #0077B5;
+             }
+        .social-link.twitter { 
+            color: #1DA1F2; 
+            } 
+        .social-link.facebook {
+             color: #1877F2; 
+             } 
+        .social-link.instagram {
+             color: #E4405F; 
+             } 
+        .social-link.email {
+             color: var(--green); 
+             } 
+             
+        .social-link:hover {
+            transform: scale(1.15);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+         } 
+                    /* Company Vision */
+        .vision-section {
+             background: linear-gradient(135deg, var(--dark-brown) 0%, var(--light-brown) 100%);
+              color: var(--white);
+               padding: 4rem 5%;
+                border-radius: 20px;
+                 margin-bottom: 4rem;
+                  text-align: center; 
+                  }
+        .vision-section h2 {
+             font-size: clamp(2rem, 4vw, 2.5rem);
+              margin-bottom: 1.5rem;
+               } 
+        .vision-section p { 
+            font-size: clamp(1rem, 2vw, 1.2rem);
+             line-height: 1.8;
+              max-width: 900px;
+               margin: 0 auto 2rem;
+                }
+                
+                
+        .vision-grid {
+             display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+               gap: 2rem;
+                margin-top: 3rem;
+                 } 
+        .vision-item { 
+            background: rgba(255,255,255,0.1);
+             padding: 2rem; 
+             border-radius: 15px;
+              backdrop-filter: blur(10px); 
+              border: 2px solid rgba(255,255,255,0.2);
+               }
+        .vision-item h3 {
+             color: var(--primary-yellow);
+              margin-bottom: 1rem;
+               font-size: 1.5rem;
+                } 
+                /* Call to Action */ 
+        .cta-section {
+             background: var(--cream);
+              padding: 3rem;
+               border-radius: 20px;
+                text-align: center;
+                 border: 3px solid var(--primary-yellow);
+                  } 
+        .cta-section h2 {
+             color: var(--dark-brown);
+              margin-bottom: 1rem;
+               font-size: clamp(1.8rem, 4vw, 2.3rem);
+                }
+        .cta-section p { 
+            color: var(--light-brown);
+             margin-bottom: 2rem;
+              font-size: clamp(1rem, 2vw, 1.2rem);
+               } 
+               
+        .cta-buttons { 
+            display: flex; 
+            gap: 1rem;
+             justify-content: center;
+              flex-wrap: wrap;
+               }
+        .btn {
+             padding: 1rem 2.5rem; 
+             border: none;
+              border-radius: 50px; 
+              font-size: 1.1rem;
+               font-weight: bold; 
+               cursor: pointer;
+                transition: all 0.3s;
+                 text-decoration: none;
+                  display: inline-block;
+                   } 
+        .btn-primary {
+             background: var(--primary-yellow);
+              color: var(--dark-brown);
+               } 
+        .btn-primary:hover {
+             background: var(--green);
+             color: var(--white);
+              transform: translateY(-3px);
+               box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                }
+        .btn-secondary { 
+                background: transparent;
+                 color: var(--dark-brown);
+                  border: 2px solid var(--dark-brown);
+                   }
+        .btn-secondary:hover {
+             background: var(--dark-brown); 
+             color: var(--white);
+              } 
+              /* Footer */
+               footer {
+                    background: var(--dark-brown);
+                     color: var(--white);
+                      text-align: center;
+                       padding: 2rem 5%;
+                        margin-top: 4rem; 
+                        }
+         footer p {
+              margin: 0.5rem 0;
+               }
+                footer a {
+                    
+             color: var(--primary-yellow);
+              text-decoration: none;
+               } 
+        footer a:hover { 
+            text-decoration: underline;
+             } 
+             /* Animations */ 
+             @keyframes fadeInUp {
+                  from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0);
+                   } }
+         .fade-in { animation: fadeInUp 0.8s ease-out;
+          } /* Responsive */ 
+          @media (max-width: 768px) {
+              
+         nav {
+              padding: 1rem 3%;
+               }
+         .hero {
+              padding: 6rem 3% 3rem;
+               }
+                .container {
+                     padding: 3rem 3%; 
+                     } 
+        .founders-grid {
+             grid-template-columns: 1fr;
+              gap: 2rem;
+               }
+         .founder-image {
+              height: 300px;
+               font-size: 6rem; } 
+        .vision-section {
+             padding: 3rem 3%;
+              } 
+        .cta-section {
+             padding: 2rem;
+              } 
+        .cta-buttons {
+             flex-direction: column;
+              }
+              .btn { width: 100%; 
+              }
+               }
+               </style> 
+               </head>
+               <body> 
+                   <!-- Navigation -->
+                    <nav> <div class="nav-container"> 
+                        <a href="#" class="logo"><img src="logo.jpg"> Imalo Bees Limited</a> 
+                        <a href="index.html" class="back-link">← Back to Home</a> 
+                    </div>
+                 </nav>
+                  <!-- Hero Section -->
+                   <section class="hero fade-in"> 
+                       <h1>Meet Our Founders</h1>
+                        <p>Passionate beekeepers and entrepreneurs dedicated to sustainable agriculture and community empowerment</p> 
+                    </section> 
+                    <!-- Founders Section -->
+                     <div class="container">
+                          <h2 class="section-title">Our Leadership Team</h2>
+                           <p class="section-subtitle">Meet the visionaries behind Imalo Bees Limited who are transforming beekeeping in Uganda</p>
+                            <div class="founders-grid"> 
+                                     <!-- Founder 1 --> 
+                                <div class="founder-card"> 
+                                   <div class="founder-image"> <img src="logo.jpg"> </div> 
+                                   <div class="founder-info"> <h3 class="founder-name">NKABUZARANWA JOHN</h3> 
+                 <p class="founder-role">Co-Founder</p> 
+                 <p class="founder-bio">Results-driven Agricultural Officer with one year of experience in agricultural extension services, project management, 
+                      Micro finance management, and business development. Proven track record of increasing crop yields, improving farmer livelihoods, 
+                      strating and growing micro finance branches and successfully managing agribusiness ventures.
+                      <li>BSc in Agriculture and Rural Innovation, Makerere University (2017 - 2022)</li> 
+                               <li>Certified Master Beekeeper</li> 
+                  </p>
+                       <div class="founder-highlights">  
+                            <ul> 
+                               <h4>Professional Experience:</h4>
+                            <li>  - Agricultural Officer, working with Sasakawa Africa association, ZAABTA in luwero district(2021-2022)</li>
+                               <li>- Provide technical guidance to farmers on best agricultural practices</li>  
+                               <li> - Develop and implement agricultural projects to improve productivity and livelihoods</li> 
+                                <li>- Collaborate with stakeholders to promote agricultural development</li> 
+                                 <li>- cream Branch Manager, Working with Muvule Financing ldt (2021-2023)</li> 
+                               <li>  - Provided me with technical guidance of locating strategically fertile and potentially good communities to start up branches, 
+                                 marketing the products that I was going to provide, Make sales that sustained the branches, innovating idears to grow my team and Branch,
+                                  organising and keeping books well for accountability purpose.
+                                 </li>
+                    <li></li>
+                    </ul>
+                    </div> 
+                    <div class="social-links"></div> 
+                    <a href="https://linkedin.com" target="_blank" class="social-link linkedin" title="LinkedIn"></a>
+                    <a href="https://twitter.com" target="_blank" class="social-link twitter" title="Twitter"></a>
+                    <a href="https://facebook.com" target="_blank" class="social-link facebook" title="Facebook"></a>
+                    <a href="mailto:nkabujohn176@gmail.com" target="_blank" class="social-link linkedin" title="LinkedIn"></a>
+                    </div>
+              </div>
+         </div>
+                                <!-- Founder 2 --> 
+                                <div class="founder-card"> 
+                                <div class="founder-image"> <img src="logo.jpg"> </div> 
+                                <div class="founder-info"> <h3 class="founder-name"> AKUO RUTH</h3> 
+              <p class="founder-role">Founder</p> 
+              <p class="founder-bio"> Ruth is highly motivated, dedicated, diligent, proactive and self-driven individual. Possess relevant professional experience gained during two years of extension work.
+               A specialist in beekeeping practices, trained by The Uganda National Apicultural Development Organization (TUNADO), and also the managing director of Imalo bees limited.
+               <li> Bachelor of vocational studies in agriculture with education Kyambogo University (2017 - 2020) 
+               </li> <br>
+                
+              
+                    <div class="founder-highlights">  
+                         <ul> 
+                            <h4>Professional Experience:</h4>
+                            <p>Worked with The Uganda National Apiculture Organization (TUNADO) for two years (2022 – 2023) as a supervisor of apiary masters, training farmers on beekeeping practices. 
+                              <li>
+                                   <h4> KEY COMPETENCES </h4> 
+                                  <li> Flexible in any environment</li> 
+                                  <li>Effective communication skills </li> 
+                                   <li> Team leading skills </li> 
+                                        
+                                 </li>
+                         </p> 
+                 </ul>
+                 </div> 
+                 <div class="social-links"></div> 
+                 <a href="https://linkedin.com" target="_blank" class="social-link linkedin" title="LinkedIn"></a>
+                 <a href="https://twitter.com" target="_blank" class="social-link twitter" title="Twitter"></a>
+                 <a href="https://facebook.com" target="_blank" class="social-link facebook" title="Facebook"></a>
+                 <a href="mailto:ruthakuo1@gmail.com " target="_blank" class="social-link linkedin" title="LinkedIn"></a>
+                 </div>
+           </div>
+     
+                   
+
+                               <!-- Founder 3 --> 
+                               <div class="founder-card"> 
+                                   <div class="founder-image"><img src="logo.jpg">  </div> 
+                                   <div class="founder-info"> 
+                                        <h3 class="founder-name">KYOBE MICHEAL JORDAN</h3> 
+                 <p class="founder-role">Co-Founder </p> 
+                 <p class="founder-bio">  
+                    Micheal Jordan is a local young farmer in Buikwe dealing in crop production and some livestock on a small scale however with vast knowledge and experience in poultry and piggery management due to several research and long term participation in these projects. 
+                    Am also a lower Secondary teacher at Kasoga SS specialist in Mathematics, Physics though am in my S.6 vacation. I have the leverage in teaching expertise and passion for community development to support the extension of agricultural initiatives to local farmers.
+                </p>
+                       <div class="founder-highlights"> 
+                           <h4>Key Achievements:</h4>
+                            <ul> <li>MSc in Agricultural Sciences</li> 
+                               <li>Certified Master Beekeeper</li> 
+                               <li>10+ years in commercial beekeeping</li>
+                    <li>Trained 5 beekeepers</li>
+                    </ul>
+                    </div> 
+                    <div class="social-links"></div> 
+                    <a href="https://linkedin.com" target="_blank" class="social-link linkedin" title="LinkedIn"></a>
+                    <a href="https://twitter.com" target="_blank" class="social-link twitter" title="Twitter"></a>
+                    <a href="https://facebook.com" target="_blank" class="social-link facebook" title="Facebook"></a>
+                    <a href="mailto:kyobemichealjordan@gmail.com" target="_blank" class="social-link linkedin" title="LinkedIn"></a>
+                    </div>
+                    </div>
+                    </div>
+               </div>
+
+     <!-- Vision Section --> 
+     <div class="vision-section"> 
+          <h2>Our Collective Vision</h2> 
+          <p> Together, we're building a sustainable beekeeping enterprise that not only produces premium honey products but also empowers communities, protects the environment, and promotes biodiversity. Our founders share a unified commitment to excellence, innovation, and social responsibility. </p> 
+          <div class="vision-grid">
+               <div class="vision-item"> 
+                    <h3> Sustainability</h3>
+                     <p>Protecting bee populations and promoting eco-friendly practices</p> 
+                    </div> <div class="vision-item"> 
+                         <h3> Education</h3>
+                          <p>Empowering communities through comprehensive training programs</p>
+                          </div> <div class="vision-item">
+                                <h3> Innovation</h3>
+                                 <p>Leveraging modern techniques for optimal honey production</p> 
+                              </div> <div class="vision-item"> 
+                                   <h3> Community</h3>
+                                    <p>Building partnerships that create lasting positive impact</p>
+                                    </div>
+                                    </div> 
+                                   </div>
+                                     <!-- Call to Action --> 
+                                    <div class="cta-section"> 
+                                         
+               <h2>Join Us on Our Journey</h2> 
+          <p>Whether you're interested in our training programs, honey products, or partnership opportunities, we'd love to hear from you.</p> 
+          <div class="cta-buttons"> 
+               <a href="index.html#contact" class="btn btn-primary">Get In Touch</a> 
+               <a href="index.html#training" class="btn btn-secondary">Explore Training</a> 
+               </div>
+           </div>
+           </div>
+                <!-- Footer --> 
+               <footer>
+                    <div class="logo" style="justify-content: center; margin-bottom: 1rem;"><img src="logo.jpg">Imalo Bees Limited</div>
+                      <p>Empowering Sustainable Beekeeping for a Sweeter Future</p>
+                       <p style="margin-top: 1rem;"> 
+                         📞 +256 700 123 456 | ✉️ imalobeeslimited@gmail.com </p> 
+                       <p style="margin-top: 1rem;"> 
+                       <a href="index.html#home">Home</a> | 
+                       <a href="index.html#about">About</a> | 
+                       <a href="index.html#contact">Contact</a>
+                        <!--  <a href="/privacy">Privacy Policy</a> -->
+                     </p>
+                        <p style="margin-top: 1.5rem;
+                         border-top: 1px solid rgba(255,255,255,0.2);
+                          padding-top: 1rem;">
+                           &copy; 2025 Imalo Bees Limited. All rights reserved. </p> 
+                       </footer> 
+                      
+     <script> 
+          // Intersection Observer for scroll animations
+           const observerOptions = { 
+                threshold: 0.1, 
+                rootMargin: '0px 0px -100px 0px'
+                };
+            const observer = new IntersectionObserver((entries) => {
+                  entries.forEach(entry => {
+                        if (entry.isIntersecting){ 
+                             entry.target.style.opacity = '1';
+                              entry.target.style.transform = 'translateY(0)';
+                          } }); 
+                         }, 
+                         observerOptions); 
+                        // Observe founder cards 
+                        document.querySelectorAll('.founder-card').forEach((card, index) => { 
+                             card.style.opacity = '0';
+                              card.style.transform = 'translateY(30px)'; 
+                              card.style.transition = `opacity 0.6s ease ${index * 0.2}s,
+                               transform 0.6s ease ${index * 0.2}s`; 
+                               observer.observe(card);
+                               });
+                                // Observe vision items 
+                               document.querySelectorAll('.vision-item').forEach((item, index) => { 
+                                    item.style.opacity = '0';
+                                     item.style.transform = 'translateY(30px)';
+                                      item.style.transition = `opacity 0.6s ease ${index * 0.15}s,
+                                       transform 0.6s ease ${index * 0.15}s`;
+                                        observer.observe(item);
+                                    });
+                                     // Smooth scroll for anchor links
+                                     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                                           anchor.addEventListener('click', 
+                                           function (e) {
+                                                 e.preventDefault(); 
+                                                 const target = document.querySelector(this.getAttribute('href'));
+                                                  if (target) { 
+                                                       target.scrollIntoView({
+                                                             behavior: 'smooth', 
+                                                             block: 'start' });
+                                              } }); 
+                                             });
+                         </script> 
+                         </body>
+                          </html>                 
