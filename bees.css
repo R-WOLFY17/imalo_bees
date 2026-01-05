@@ -781,6 +781,7 @@ footer {
 
     /* Products grid fixes */
     .products-grid {
+        display: grid;
         grid-template-columns: 1fr;
         gap: 1.5rem;
         width: 100%;
@@ -792,13 +793,13 @@ footer {
     }
     
     .product-image {
-        height: auto;
+        height: 200px;
         width: 100%;
     }
     
     .product-image img {
         width: 100%;
-        height: auto;
+        height: 100%;
     
         object-fit: cover;
     }
