@@ -83,7 +83,7 @@ window.addEventListener('scroll', () => {
 // EMAILJS CONFIGURATION
 // ========================================
 const EMAILJS_PUBLIC_KEY = "gHXyp2PQeCII4ud99";
-const EMAILJS_SERVICE_ID = "service_3fffeq8";
+const EMAILJS_SERVICE_ID = "service_7hj9q48";
 const EMAILJS_TEMPLATE_ID = "_ejs-test-mail-service_";
 
 // ========================================
