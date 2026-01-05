@@ -84,7 +84,7 @@ window.addEventListener('scroll', () => {
 // ========================================
 const EMAILJS_PUBLIC_KEY = "gHXyp2PQeCII4ud99";
 const EMAILJS_SERVICE_ID = "service_7hj9q48";
-const EMAILJS_TEMPLATE_ID = "_ejs-test-mail-service_";
+const EMAILJS_TEMPLATE_ID = "template_zkw7i59";
 
 // ========================================
 // INITIALIZE ON DOM LOAD
