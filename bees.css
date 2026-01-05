@@ -780,7 +780,7 @@ footer {
     }
 
     /* Products grid fixes */
-    .products-grid {
+   /* .products-grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -801,7 +801,7 @@ footer {
         width: 100%;
         height: auto;
         display: block;
-    }
+    }*/
 
     /* Gallery fixes */
     .gallery-grid {
