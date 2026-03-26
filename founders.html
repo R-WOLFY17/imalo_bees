@@ -19,7 +19,15 @@
               --green: #7CB342; 
               --cream: #FFF8E1;
                --black: #1a1a1a; 
-               --white: #ffffff; }
+               --white: #ffffff;
+               --gradient-primary: linear-gradient(135deg, var(--primary-yellow) 0%, var(--green) 100%);
+               --gradient-dark: linear-gradient(135deg, var(--dark-brown) 0%, var(--light-brown) 100%);
+               --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+               --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+               --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+               --shadow-xl: 0 20px 25px rgba(0,0,0,0.1);
+               --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
         body {
              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
               line-height: 1.6; 
@@ -125,71 +133,157 @@
                margin-bottom: 4rem;
                 } 
         .founder-card {
-          overflow: visible;
-             background: var(--white); 
-             border-radius: 20px; 
-             overflow: hidden;
-              box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-               transition: transform 0.3s, box-shadow 0.3s;
-                border-top: 5px solid var(--primary-yellow);
-         }
-        .founder-card:hover {
-             transform: translateY(-10px);
-              box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-         } 
+    overflow: visible;
+    background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+.founder-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    border-radius: 25px;
+}
+
+.founder-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-yellow);
+}
+
+.founder-card:hover::before {
+    opacity: 0.05;
+} 
         .founder-image { 
-            width: 100%;
-             height: auto;
-             object-fit: contain;
-             
-               display: flex;
-                align-items: center;
-                 justify-content: center;
-                  font-size: 8rem;
-                   position: relative;
-                    overflow: hidden;
-             } 
-        .founder-image::after {
-                  content: '';
-                   position: absolute;
-                    bottom: 0; 
-                    left: 0;
-                     right: 0; 
-                     height: 100px;
-                      background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
-                       }
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    position: relative;
+    overflow: hidden;
+    background: var(--gradient-primary);
+}
+
+.founder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.founder-card:hover .founder-image img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.founder-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+    transition: height 0.3s ease;
+}
+
+.founder-card:hover .founder-image::after {
+    height: 120px;
+}
         .founder-info {
-             padding: 2rem;
-              } 
+    padding: 2.5rem;
+    position: relative;
+    background: linear-gradient(135deg, var(--white) 0%, #fafafa 100%);
+}
+
+.founder-info::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--primary-yellow);
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+} 
         .founder-name {
-             font-size: 1.8rem;
-              color: var(--dark-brown);
-               margin-bottom: 0.5rem;
-                font-weight: bold;
-                 } 
+    font-size: 2rem;
+    color: var(--dark-brown);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+}
+
+.founder-name::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+} 
         .founder-role {              
-        font-size: 1.2rem;
-         color: var(--green);
-          margin-bottom: 1rem;
-           font-weight: 600;
-            } 
+    font-size: 1.3rem;
+    color: var(--green);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    } 
         .founder-bio {
-             color: #555;
-              line-height: 1.8;
-               margin-bottom: 1.5rem;
-               }
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+}
                 
         .founder-highlights {
-             background: var(--cream);
-              padding: 1rem;
-               border-radius: 10px;
-                margin-bottom: 1.5rem;
-                 } 
+    background: linear-gradient(135deg, var(--cream) 0%, #fff3e0 100%);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-yellow);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.founder-highlights:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+} 
         .founder-highlights h4 { 
-            color: var(--dark-brown);
-             margin-bottom: 0.5rem;
-              font-size: 1rem;
-               }
+    color: var(--dark-brown);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
         .founder-highlights ul {
              list-style: none;
               padding-left: 0;
@@ -207,25 +301,45 @@
                font-size: 0.9rem;
                 } 
         .social-links {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 15px;
-                 } 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 1rem;
+} 
         .social-link {
-             font-size: 24px;
-             color: #333;
+    font-size: 24px;
+    color: #333;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: var(--transition);
+    background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
 
-              width: 45px;
-         height: 45px;
-          border-radius: 50%;
-           display: flex; align-items: center;
-            justify-content: center;
-             text-decoration: none;
-              font-size: 1.3rem;
-               transition: all 0.3s;
-                background: var(--cream);
-                 } 
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.social-link:hover::before {
+    left: 100%;
+} 
         .social-link.linkedin { 
             color: #0077B5;
              }
@@ -243,10 +357,9 @@
              } 
              
         .social-link:hover {
-             color: #0077b5;
-            transform: scale(1.15);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-         } 
+    transform: translateY(-5px) scale(1.15);
+    box-shadow: var(--shadow-lg);
+} 
                     /* Company Vision */
         .vision-section {
              background: linear-gradient(135deg, var(--dark-brown) 0%, var(--light-brown) 100%);
@@ -424,7 +537,7 @@
                             <div class="founders-grid"> 
                                      <!-- Founder 1 --> 
                                 <div class="founder-card"> 
-                                   <div class="founder-image"> <img src="images/.jpg"> </div> 
+                                   <div class="founder-image"> <img src="f2.jpg" alt="NKABUZARANWA JOHN"> </div> 
                                    <div class="founder-info"> <h3 class="founder-name">NKABUZARANWA JOHN</h3> 
                  <p class="founder-role">Co-Founder</p> 
                  <p class="founder-bio">Results-driven Agricultural Officer with one year of experience in agricultural extension services, project management, 
@@ -448,7 +561,17 @@
                     <li></li>
                     </ul>
                     </div> 
-                    <div class="social-links"></div> 
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank" class="social-link linkedin" title="LinkedIn">
+                             <i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="social-link twitter" title="Twitter">
+                             <i class="fab fa-twitter"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="social-link facebook" title="Facebook">
+                             <i class="fab fa-facebook"></i></a>
+                        <a href="mailto:nkabuzaranwajohn@example.com" class="social-link email" title="Email">
+                             <i class="fas fa-envelope"></i>
+                    </a> 
+                    </div> 
                   
                     
                     </div>
@@ -479,6 +602,17 @@
                          </p> 
                  </ul>
                  </div>  
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank" class="social-link linkedin" title="LinkedIn">
+                             <i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="social-link twitter" title="Twitter">
+                             <i class="fab fa-twitter"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="social-link facebook" title="Facebook">
+                             <i class="fab fa-facebook"></i></a>
+                        <a href="mailto:akuoruth@example.com" class="social-link email" title="Email">
+                             <i class="fas fa-envelope"></i>
+                    </a> 
+                    </div>
 								</div>
 								</div>
      
@@ -506,17 +640,18 @@ Science teacher at Self Help P/S. I have the leverage in teaching expertise and 
                                
                     
                     </ul>
-                    </div> <!---
-                    <a href="https://linkedin.com" target="_blank" class="social-link linkedin" title="LinkedIn">
-                         <i class="fab fa-linkedin"></i></a>
-                    <a href="https://twitter.com" target="_blank" class="social-link twitter" title="Twitter">
-                         <i class="fab fa-twitter"></i></a>
-                    <a href="https://facebook.com" target="_blank" class="social-link facebook" title="Facebook">
-                         <i class="fab fa-facebook"></i></a>
-                    <a href="mailto:kyobemichealjordan1@gmail.com" target="_blank" class="social-link" title="Email">
-                         <i class="fab fa-envelope"></i>
+                    </div> 
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank" class="social-link linkedin" title="LinkedIn">
+                             <i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="social-link twitter" title="Twitter">
+                             <i class="fab fa-twitter"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="social-link facebook" title="Facebook">
+                             <i class="fab fa-facebook"></i></a>
+                        <a href="mailto:kyobemichealjordan1@gmail.com" class="social-link email" title="Email">
+                             <i class="fas fa-envelope"></i>
                     </a> 
-                    </div> --->
+                    </div>
                     </div>
                     </div>
                </div>
