@@ -208,11 +208,13 @@ function initializeContactForm() {
         // Get form values
         const formData = {
             from_name: document.getElementById('name').value.trim(),
-            from_email: document.getElementById('email').value.trim(),
+            from_email: 'website@imalobees.com', // Generic website email
+            reply_to: document.getElementById('email').value.trim(), // User's email for replies
             phone: document.getElementById('phone').value.trim(),
             subject: document.getElementById('subject').value.trim(),
             message: document.getElementById('message').value.trim(),
-            to_email: 'imalobeeslimited1@gmail.com'
+            to_email: 'imalobeeslimited1@gmail.com',
+            user_email: document.getElementById('email').value.trim() // Keep user email for template
         };
         
         // Validate form
@@ -264,7 +266,7 @@ function validateForm(data) {
         return false;
     }
     
-    if (!isValidEmail(data.from_email)) {
+    if (!isValidEmail(data.user_email)) {
         showMessage('error', 'Please enter a valid email address');
         return false;
     }
